@@ -1,6 +1,6 @@
 package salestax;
 
-public class ProductNonExempt{
+public class ProductNonExempt extends Product{
     public static final double basicSalesTax = 10.0;
     public static final double importDuty = 5.0;
     private boolean imported;
