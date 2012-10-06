@@ -6,3 +6,6 @@
 
 # Ignore emacs backup files
 *~
+
+# Ignore directories named target
+target/
