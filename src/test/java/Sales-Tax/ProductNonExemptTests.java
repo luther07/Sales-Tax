@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ProductTests {
+public class ProductNonExemptTests {
 
    @Test
    public void testTrue() {
@@ -13,7 +13,6 @@ public class ProductTests {
 
     @Test(expected = java.lang.IllegalArgumentException.class)
     public void Product_ExceptionThrownIf_QuantityLessThanOne() throws Exception {
-        Product zeroQuantity = new Product(0, true, "zeroCokes", 1.00);
-            
+        ProductNonExempt zeroQuantity = new ProductNonExempt(0, true, "zeroCokes", 1.00);
     }
 }
