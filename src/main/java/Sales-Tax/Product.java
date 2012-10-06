@@ -1,5 +1,5 @@
 package salestax;
 
-public class Calculator{
+public class Product{
    
 }
