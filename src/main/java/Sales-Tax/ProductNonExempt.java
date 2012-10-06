@@ -12,4 +12,16 @@ public class ProductNonExempt extends Product{
     public ProductNonExempt(int quantity, boolean imported, String name, double basePrice) {
         if (quantity < 1) throw new java.lang.IllegalArgumentException();
     }
+
+    public String name() {
+        return "John Doe";
+    }
+
+    public double price() {
+        return 1.0;
+    }
+
+    public int quantity() {
+        return 1;
+    }
 }
