@@ -1,3 +1,5 @@
+package salestax;
+
 abstract class Product{
     private static double importDuty;
     private boolean imported;
