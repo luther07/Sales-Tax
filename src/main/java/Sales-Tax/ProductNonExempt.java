@@ -4,7 +4,6 @@ public class ProductNonExempt extends Product{
     public static final double basicSalesTax = 10.0;
     public static final double importDuty = 5.0;
     private boolean imported;
-    private boolean exempt;
     private String name;
     private double basePrice;
     private int quantity;
@@ -13,17 +12,25 @@ public class ProductNonExempt extends Product{
         if (quantity < 1) throw new java.lang.IllegalArgumentException();
         if (name.isEmpty()) throw new java.lang.IllegalArgumentException();
         if (basePrice < 0) throw new java.lang.IllegalArgumentException();
+        this.quantity = quantity;
+        this.imported = imported;
+        this.name = name;
+        this.basePrice = basePrice;
     }
 
     public String name() {
-        return "John Doe";
+        return this.name;
     }
 
     public double price() {
-        return 1.0;
+        if (imported) {
+            return (this.basePrice * quantity * (1 + importDuty/100));
+        } else {
+            return this.basePrice * quantity;
+        }
     }
 
     public int quantity() {
-        return 1;
+        return this.quantity;
     }
 }
