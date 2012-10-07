@@ -33,5 +33,10 @@ public class ProductExemptTests {
         assertEquals(12345, quantityGreaterThanZero.quantity());    
     }
 
+    @Test
+    public void ProductExempt_WhenUnitPriceGreaterThanZero_ThenReturnsCorrectPrice() {
+        ProductExempt quantityGreaterThanZero = new ProductExempt(999, false, "price > 0", 1.0);
+        assertEquals(1.0, quantityGreaterThanZero.price(), 0.01);
+    }
 
 }
