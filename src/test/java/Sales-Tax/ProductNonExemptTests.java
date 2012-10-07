@@ -35,7 +35,7 @@ public class ProductNonExemptTests {
 
     @Test
     public void ProductNonExempt_WhenUnitPriceGreaterThanZero_ReturnsCorrectPrice() {
-        ProductNonExempt quantityGreaterThanZero = new ProductNonExempt(999, false, "price > 0", 1.0);
+        ProductNonExempt unitPriceGreaterThanZero = new ProductNonExempt(999, false, "price > 0", 1.0);
         assertEquals(1.1, quantityGreaterThanZero.price(), 0.01);
     }
 
