@@ -34,13 +34,13 @@ public class ProductNonExemptTests {
     }
 
     @Test
-    public void ProductNonExempt_WhenBasePriceGreaterThanZero_ReturnsCorrectValue() {
+    public void ProductNonExempt_WhenUnitPriceGreaterThanZero_ReturnsCorrectValue() {
         ProductNonExempt quantityGreaterThanZero = new ProductNonExempt(1, false, "price > 0", 1.0);
         assertEquals(1.1, quantityGreaterThanZero.price(), 0.01);
     }
 
     @Test
-    public void ProductNonExempt_WhenImportedBasePriceGreaterThanZero_ReturnsCorrectValue() {
+    public void ProductNonExempt_WhenImportedUnitPriceGreaterThanZero_ReturnsCorrectValue() {
         ProductNonExempt importedQuantityGreaterThanZero = new ProductNonExempt(1, true, "price > 0", 1.0);
         assertEquals(1.15, importedQuantityGreaterThanZero.price(), 0.01);
     }
