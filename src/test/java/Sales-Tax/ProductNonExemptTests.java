@@ -34,14 +34,14 @@ public class ProductNonExemptTests {
     }
 
     @Test
-    public void ProductNonExempt_WhenUnitPriceGreaterThanZero_ReturnsCorrectValue() {
-        ProductNonExempt quantityGreaterThanZero = new ProductNonExempt(1, false, "price > 0", 1.0);
+    public void ProductNonExempt_WhenUnitPriceGreaterThanZero_ReturnsCorrectPrice() {
+        ProductNonExempt quantityGreaterThanZero = new ProductNonExempt(999, false, "price > 0", 1.0);
         assertEquals(1.1, quantityGreaterThanZero.price(), 0.01);
     }
 
     @Test
-    public void ProductNonExempt_WhenImportedUnitPriceGreaterThanZero_ReturnsCorrectValue() {
-        ProductNonExempt importedQuantityGreaterThanZero = new ProductNonExempt(1, true, "price > 0", 1.0);
+    public void ProductNonExempt_WhenImportedUnitPriceGreaterThanZero_ReturnsCorrectPrice() {
+        ProductNonExempt importedQuantityGreaterThanZero = new ProductNonExempt(999, true, "price > 0", 1.0);
         assertEquals(1.15, importedQuantityGreaterThanZero.price(), 0.01);
     }
 
@@ -53,13 +53,13 @@ public class ProductNonExemptTests {
 
     @Test
     public void ProductNonExempt_WhenImported_ThenTaxFifteenPercent() {
-        ProductNonExempt importedProductTax = new ProductNonExempt(1, true, "imported", 1.0);
+        ProductNonExempt importedProductTax = new ProductNonExempt(999, true, "imported", 1.0);
         assertEquals(1.0*0.15, importedProductTax.tax(), 0.01);
     }
 
     @Test
 	public void ProductNonExempt_WhenNotImported_ThenTaxTenPercent() {
-        ProductNonExempt notImportedProductTax = new ProductNonExempt(1, false, "not imported", 1.0);
+        ProductNonExempt notImportedProductTax = new ProductNonExempt(999, false, "not imported", 1.0);
         assertEquals(1.0*0.10, notImportedProductTax.tax(), 0.01);
     }
 }
