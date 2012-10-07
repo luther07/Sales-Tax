@@ -5,17 +5,17 @@ public class ProductNonExempt extends Product{
     public static final double importDuty = 5.0;
     private boolean imported;
     private String name;
-    private double basePrice;
+    private double unitPrice;
     private int quantity;
     
-    public ProductNonExempt(int quantity, boolean imported, String name, double basePrice) {
+    public ProductNonExempt(int quantity, boolean imported, String name, double unitPrice) {
         if (quantity < 1) throw new java.lang.IllegalArgumentException();
         if (name.isEmpty()) throw new java.lang.IllegalArgumentException();
-        if (basePrice < 0) throw new java.lang.IllegalArgumentException();
+        if (unitPrice < 0) throw new java.lang.IllegalArgumentException();
         this.quantity = quantity;
         this.imported = imported;
         this.name = name;
-        this.basePrice = basePrice;
+        this.unitPrice = unitPrice;
     }
 
     public String name() {
@@ -23,7 +23,7 @@ public class ProductNonExempt extends Product{
     }
 
     public double price() {
-        return this.basePrice * this.quantity + this.tax();
+        return this.unitPrice * this.quantity + this.tax();
     }
 
     public int quantity() {
@@ -36,9 +36,9 @@ public class ProductNonExempt extends Product{
 
     public double tax() {
         if (imported) {
-            return (this.basePrice * quantity * (importDuty + basicSalesTax)/100);
+            return (this.unitPrice * quantity * (importDuty + basicSalesTax)/100);
         } else {
-            return (this.basePrice * quantity * (basicSalesTax/100));
+            return (this.unitPrice * quantity * (basicSalesTax/100));
         }
     }
 }

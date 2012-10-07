@@ -4,7 +4,7 @@ abstract class Product{
     private static double importDuty;
     private boolean imported;
     private String name;
-    private double basePrice;
+    private double unitPrice;
     private int quantity;
 
     abstract String name();
