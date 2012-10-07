@@ -1,3 +1,13 @@
+/***********************************************************
+ * Author:      Mark Johnson
+ * Date:        10/07/12
+ * 
+ * Compilation: javac ProductNonExempt.java
+ * Execution:   not applicable
+ *
+ * Defines a type for non-exempt products.
+ **********************************************************/
+
 package salestax;
 
 public class ProductNonExempt extends Product{
@@ -36,9 +46,13 @@ public class ProductNonExempt extends Product{
 
     public double tax() {
         if (imported) {
-            return (this.unitPrice * (importDuty + basicSalesTax)/100);
+            return taxhelper(this.unitPrice * (importDuty + basicSalesTax) / 100);
         } else {
-            return (this.unitPrice * (basicSalesTax/100));
+            return taxhelper(this.unitPrice * (basicSalesTax / 100));
         }
+    }
+
+    private double taxhelper(double rawTax) {
+        return (Math.ceil(rawTax * 20.0) / 20);
     }
 }
