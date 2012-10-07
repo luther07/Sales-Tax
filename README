@@ -1,2 +1,4 @@
 Sales tax problem.
 Assumption: output lines print unit price rather than line total.
+
+Assumption: I can use java.lang.Math, because it is not considered external.
