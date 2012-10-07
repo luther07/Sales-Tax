@@ -20,4 +20,11 @@ public class ProductExemptTests {
     public void ProductExempt_OnNegativePrice_ExceptionThrown() throws Exception {
         ProductExempt negativePriceExempt = new ProductExempt(1, false, "negative price", -1.0);
     }
+
+    @Test
+    public void ProductExempt_WhenNameNotEmpty_ThenReturnCorrectName() {
+        ProductExempt nonEmptyName = new ProductExempt(1, false, "non-empty name", 1.0);
+        assertEquals("non-empty name", nonEmptyName.name());
+    }
+
 }
