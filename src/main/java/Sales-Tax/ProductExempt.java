@@ -29,7 +29,7 @@ public class ProductExempt extends Product {
     }
 
     public String name() {
-        return "baked beans";
+        return this.name;
     }
 
     public double price() {
