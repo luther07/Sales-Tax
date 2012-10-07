@@ -19,6 +19,13 @@ public class ProductExempt extends Product {
     private int quantity;
 
     public ProductExempt(int quantity, boolean imported, String name, double unitPrice) {
+        if (quantity < 1) throw new java.lang.IllegalArgumentException();
+        if (name.isEmpty()) throw new java.lang.IllegalArgumentException();
+        if (unitPrice < 0) throw new java.lang.IllegalArgumentException();
+        this.quantity = quantity;
+        this.imported = imported;
+        this.name = name;
+        this.unitPrice = unitPrice;
     }
 
     public String name() {
