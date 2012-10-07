@@ -23,11 +23,7 @@ public class ProductNonExempt extends Product{
     }
 
     public double price() {
-        if (imported) {
-            return (this.basePrice * quantity * (1 + (importDuty + basicSalesTax)/100));
-        } else {
-            return this.basePrice * quantity * (1 + basicSalesTax/100);
-        }
+        return this.basePrice * this.quantity + this.tax();
     }
 
     public int quantity() {
