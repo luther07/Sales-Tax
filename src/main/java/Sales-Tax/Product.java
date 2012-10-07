@@ -10,4 +10,6 @@ abstract class Product{
     abstract String name();
     abstract double price();
     abstract int quantity();
+    abstract boolean isImported();
+    abstract double tax();
 }

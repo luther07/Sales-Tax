@@ -37,4 +37,8 @@ public class ProductNonExempt extends Product{
     public boolean isImported() {
         return imported;
     }
+
+    public double tax() {
+        return 0.0;
+    }
 }
