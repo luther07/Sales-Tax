@@ -27,4 +27,11 @@ public class ProductExemptTests {
         assertEquals("non-empty name", nonEmptyName.name());
     }
 
+    @Test
+    public void ProductExempt_WhenQuantityGreaterThanZero_ThenReturnCorrectQuantity() {
+        ProductExempt quantityGreaterThanZero = new ProductExempt(12345, false, "qty > 0", 1.0);
+        assertEquals(12345, quantityGreaterThanZero.quantity());    
+    }
+
+
 }
