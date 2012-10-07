@@ -33,11 +33,11 @@ public class ProductExempt extends Product {
     }
 
     public double price() {
-        return 0.0;
+        return this.price + this.tax();
     }
 
     public int quantity() {
-        return 0;
+        return this.quantity;
     }
 
     public boolean isImported() {
