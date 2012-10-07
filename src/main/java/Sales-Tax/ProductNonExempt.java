@@ -33,4 +33,8 @@ public class ProductNonExempt extends Product{
     public int quantity() {
         return this.quantity;
     }
+
+    public boolean isImported() {
+        return imported;
+    }
 }
