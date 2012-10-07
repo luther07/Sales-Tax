@@ -44,4 +44,10 @@ public class ProductNonExemptTests {
         ProductNonExempt importedQuantityGreaterThanZero = new ProductNonExempt(1, true, "price > 0", 1.0);
         assertEquals(1.15, importedQuantityGreaterThanZero.price(), .01);
     }
+
+    @Test
+	public void ProductNonExempt_WhenImported_ThenIsImportedReturnsTrue() {
+        ProductNonExempt importedProduct = new ProductNonExempt(1, true, "imported", 1.0);
+        assertEquals(true, importedProduct.isImported());
+    }
 }
