@@ -2,6 +2,7 @@ package salestax;
 
 abstract class Product{
     private static double importDuty;
+    private static double basicSalesTax;
     private boolean imported;
     private String name;
     private double unitPrice;
