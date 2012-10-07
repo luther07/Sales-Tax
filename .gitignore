@@ -9,3 +9,6 @@
 
 # Ignore directories named target
 target/
+
+# Ignore autosave files
+\#*#
