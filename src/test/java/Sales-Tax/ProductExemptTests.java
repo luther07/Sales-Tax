@@ -35,8 +35,14 @@ public class ProductExemptTests {
 
     @Test
     public void ProductExempt_WhenUnitPriceGreaterThanZero_ThenReturnsCorrectPrice() {
-        ProductExempt quantityGreaterThanZero = new ProductExempt(999, false, "price > 0", 1.0);
-        assertEquals(1.0, quantityGreaterThanZero.price(), 0.01);
+        ProductExempt unitPriceGreaterThanZero = new ProductExempt(999, false, "price > 0", 1.0);
+        assertEquals(1.0, unitPriceGreaterThanZero.price(), 0.01);
+    }
+
+    @Test
+    public void ProductExempt_WhenImportUnitPriceGreaterThanZero_ThenReturnsCorrectPrice() {
+        ProductExempt importedUnitPriceGreaterThanZero = new ProductExempt(999, true, "price > 0", 1.0);
+        assertEquals(1.05, importedUnitPriceGreaterThanZero.price(), 0.01);
     }
 
 }
