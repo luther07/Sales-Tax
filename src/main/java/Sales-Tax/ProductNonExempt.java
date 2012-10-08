@@ -55,4 +55,8 @@ public class ProductNonExempt extends Product{
     private double taxhelper(double rawTax) {
         return (Math.ceil(rawTax * 20.0) / 20);
     }
+
+    public String toString() {
+        return ("" + this.quantity() + " " + this.name() + " : " + this.price());
+    }
 }
