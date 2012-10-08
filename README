@@ -4,3 +4,10 @@ Assumption: output lines print unit price rather than line total.
 Assumption: I can use java.lang.Math, because it is not considered external.
 
 Assumption: The taxes will not be variable.
+
+To test application: 
+From the project base directory type: 'java -jar target/scala-2.9.1/sales-tax_2.9.1-1.0.jar'
+Type three full lines of input like:
+1 book at 12.49
+1 music CD at 14.99
+1 chocolate bar at 0.85
