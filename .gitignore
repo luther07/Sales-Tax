@@ -12,3 +12,4 @@ target/
 
 # Ignore autosave files
 \#*#
+.\#*
