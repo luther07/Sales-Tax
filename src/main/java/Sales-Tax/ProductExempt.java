@@ -33,7 +33,7 @@ public class ProductExempt extends Product {
     }
 
     public double price() {
-        return this.price + this.tax();
+        return this.unitPrice + this.tax();
     }
 
     public int quantity() {
