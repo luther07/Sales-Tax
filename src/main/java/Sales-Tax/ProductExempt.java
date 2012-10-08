@@ -41,7 +41,7 @@ public class ProductExempt extends Product {
     }
 
     public boolean isImported() {
-        return false;
+        return this.imported;
     }
 
     public double tax() {
