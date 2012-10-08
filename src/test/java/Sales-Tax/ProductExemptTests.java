@@ -52,7 +52,7 @@ public class ProductExemptTests {
     }
 
     @Test
-    public void ProductExempt_WhenImported_ThenTaxIsFifteenPercent() {
+    public void ProductExempt_WhenImported_ThenTaxIsFivePercent() {
         ProductExempt importedProductTax = new ProductExempt(999, true, "imported", 1.0);
         assertEquals(1.0*0.05, importedProductTax.tax(), 0.01);
     }
