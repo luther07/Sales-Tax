@@ -62,4 +62,10 @@ public class ProductExemptTests {
         ProductExempt notImportedProductTax = new ProductExempt(999, false, "not imported", 1.0);
         assertEquals(0.0, notImportedProductTax.tax(), 0.01);
     }
+
+    @Test
+	public void ProductExempt_WhenTaxNotAtFiveCentIncr_ThenRound() {
+        ProductExempt taxRoundingProduct = new ProductExempt(999, true, "must round", 1.1);
+        assertEquals(0.10, taxRoundingProduct.tax(), 0.01);
+    }
 }
