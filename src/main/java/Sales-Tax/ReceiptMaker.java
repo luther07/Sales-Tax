@@ -6,18 +6,26 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class ReceiptMaker {
+    public static String line;
+    public static String[] tokenArray = {"my", "name", "is", "mark"};
+    public static int quantity = 0;
+    public static LinkedList<Product> products = new LinkedList<Product>();
+    public static double totalTax = 0.0;
+    public static double totalAmount = 0.0;
+    public static boolean imported = false;
+    public static boolean exempt = false;
+    public static String name = "";
+    public static double price = 0.0;
+
+    public static void productFlush() {
+        quantity = 0;
+        imported = false;
+        exempt = false;
+        name = "";
+        price = 0.0;
+    }
 
     public static void main(String[] args) throws IOException{
-    String line;
-    String[] tokenArray = {"my", "name", "is", "mark"};
-    int quantity = 0;
-    LinkedList<Product> products = new LinkedList<Product>();
-    double totalTax = 0.0;
-    double totalAmount = 0.0;
-    boolean imported = false;
-    boolean exempt = false;
-    String name = "";
-    double price = 0.0;
 
     Console c = System.console();
     if (c == null) {
@@ -25,6 +33,8 @@ public class ReceiptMaker {
         System.exit(1);
     }
 
+    for(int j = 1; j <= 3; j++) {
+    productFlush();
     line = c.readLine();
     tokenArray = line.split(" ");
 
@@ -86,6 +96,9 @@ public class ReceiptMaker {
         }
 
     } // end loop on tokenArray
+
+	}
+
     System.out.println("OUTPUT:");
         for (Product item : products) {
             System.out.println(item.toString());
