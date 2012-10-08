@@ -45,4 +45,9 @@ public class ProductExemptTests {
         assertEquals(1.05, importedUnitPriceGreaterThanZero.price(), 0.01);
     }
 
+    @Test
+    public void ProductExempt_WhenImported_ThenIsImportedReturnsTrue() {
+        ProductExempt importedProduct = new ProductExempt(1, true, "imported", 1.0);
+        assertEquals(true, importedProduct.isImported());
+}
 }
