@@ -17,6 +17,16 @@ public class ReceiptMaker {
     public static String name = "";
     public static double price = 0.0;
 
+    public double totalSalesTax() {
+        double salesTax = 0.0;
+
+        for(Product product : products) {
+            salesTax += product.tax();
+        }
+
+        return salesTax;
+    }
+
     public static void productFlush() {
         quantity = 0;
         imported = false;
