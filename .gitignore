@@ -13,3 +13,6 @@ target/
 # Ignore autosave files
 \#*#
 .\#*
+
+# Ignore text files
+*.txt
