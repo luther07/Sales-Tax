@@ -17,6 +17,19 @@ public class ReceiptMaker {
     public static String name = "";
     public static double price = 0.0;
 
+    /*************************************************************
+     *
+     * @returns the total sales tax for all products in a receipt.
+     *
+     ************************************************************/
+    public double totalSalesTax() {
+        double runningTotal = 0;
+        for(Product item : products) {
+            runningTotal += item.tax();
+	}
+        return runningTotal;
+    }
+
     public static void productFlush() {
         quantity = 0;
         imported = false;
