@@ -17,6 +17,15 @@ public class ReceiptMaker {
     private static String name = "";
     private static double price = 0.0;
 
+    static String parseName(String[] inputLine) {
+        String inputName = "";
+        String[] input = inputLine;
+        for(int i = 1; i <= input.length - 3; i++) {
+            inputName += inputLine[i];
+        }
+        return inputName;
+    }
+
     static int parseQuantity(String[] inputLine) {
        int parseInteger = 0;
        try { 
