@@ -75,4 +75,10 @@ public class ProductExemptTests {
         ProductExempt inputQuantityFiveHundred = new ProductExempt(inputProductData);
         assertEquals(500, inputQuantityFiveHundred.quantity());
     }
+
+    @Test(expected = java.lang.IllegalArgumentException.class)
+    public void ProductExempt_ConstructorStringArray_WhenQuantityLessThan1_ExceptionThrown() {
+        String[] quantityZero = {"0", "books", "at", "12.49"};
+        ProductExempt stringArrayConstructorZeroQuantity = new ProductExempt(quantityZero);
+    }
 }
