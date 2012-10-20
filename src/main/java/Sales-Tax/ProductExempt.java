@@ -25,6 +25,7 @@ public class ProductExempt extends Product {
 	} catch (NumberFormatException e) {
             System.out.println(e.getMessage());
 	}
+        if (quantityInteger < 1) throw new java.lang.IllegalArgumentException();
 
         this.quantity = quantityInteger;
     }
