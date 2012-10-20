@@ -6,16 +6,16 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class ReceiptMaker {
-    public static String line;
-    public static String[] tokenArray = {"my", "name", "is", "mark"};
-    public static int quantity = 0;
-    public static LinkedList<Product> products = new LinkedList<Product>();
-    public static double totalTax = 0.0;
-    public static double totalAmount = 0.0;
-    public static boolean imported = false;
-    public static boolean exempt = false;
-    public static String name = "";
-    public static double price = 0.0;
+    private static String line;
+    private static String[] tokenArray = {"my", "name", "is", "mark"};
+    private static int quantity = 0;
+    private static LinkedList<Product> products = new LinkedList<Product>();
+    private static double totalTax = 0.0;
+    private static double totalAmount = 0.0;
+    private static boolean imported = false;
+    private static boolean exempt = false;
+    private static String name = "";
+    private static double price = 0.0;
 
     /*************************************************************
      *
