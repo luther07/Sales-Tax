@@ -28,4 +28,10 @@ public class ReceiptMakerTests {
         String[] inputData = {"0", "books", "at", "12.49"};
         assertEquals(0, ReceiptMaker.parseQuantity(inputData));
     }
+
+    @Test
+    public void ReceiptMaker_parseName_WhenInputHasNameBook_ReturnsBook() {
+        String[] inputData = {"1", "book", "at", "12.49"};
+        assertEquals("book", ReceiptMaker.parseName(inputData));
+    }
 }
