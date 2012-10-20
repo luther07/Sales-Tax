@@ -17,6 +17,17 @@ public class ReceiptMaker {
     private static String name = "";
     private static double price = 0.0;
 
+    static boolean parseExempt(String[] inputLine) {
+        boolean isExempt = false;
+        for (String item : inputLine) {
+            if (item.equalsIgnoreCase("pills") || item.equalsIgnoreCase("book") ||
+                item.equalsIgnoreCase("books") || item.equalsIgnoreCase("chocolate") ||
+                item.equalsIgnoreCase("chocolates"))
+                { isExempt = true; } 
+	}
+        return isExempt;
+    }
+
     static double parsePrice(String[] inputLine) {
         double inputPrice = 0.0;
         int inputSize = inputLine.length;
