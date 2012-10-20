@@ -34,4 +34,10 @@ public class ReceiptMakerTests {
         String[] inputData = {"1", "book", "at", "12.49"};
         assertEquals("book", ReceiptMaker.parseName(inputData));
     }
+
+    @Test
+    public void ReceiptMaker_parseImported_WhenInputSaysImported_ReturnsTrue() {
+        String[] inputData = {"1", "imported", "book", "at", "12.49"};
+        assertEquals(true, ReceiptMaker.parseImported(inputData));
+    }
 }
