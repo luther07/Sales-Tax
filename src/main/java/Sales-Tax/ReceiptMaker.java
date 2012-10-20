@@ -19,12 +19,25 @@ public class ReceiptMaker {
 
     /*************************************************************
      *
+     * @returns the receipt total for all products in a receipt.
+     *
+     ************************************************************/
+    public double receiptTotal() {
+        double runningTotal = 0;
+        for (Product item : products) {
+            runningTotal += item.price();
+	}
+        return runningTotal;
+    }
+
+    /*************************************************************
+     *
      * @returns the total sales tax for all products in a receipt.
      *
      ************************************************************/
     public double totalSalesTax() {
         double runningTotal = 0;
-        for(Product item : products) {
+        for (Product item : products) {
             runningTotal += item.tax();
 	}
         return runningTotal;
@@ -115,7 +128,7 @@ public class ReceiptMaker {
     System.out.println("OUTPUT:");
         for (Product item : products) {
             System.out.println(item.toString());
-            totalTax += item.tax() * item.quantity();
+            totalTax += item.tax();
             totalAmount += item.quantity() * item.price();
         }
 
