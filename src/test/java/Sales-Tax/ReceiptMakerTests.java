@@ -46,4 +46,10 @@ public class ReceiptMakerTests {
         String[] inputData = {"1", "imported", "book", "at", "100.0"};
         assertEquals(100.0, ReceiptMaker.parsePrice(inputData), 0.01);
     }
+
+    @Test
+    public void ReceiptMaker_parseExempt_WhenInputIsChocolate_ReturnsTrue() {
+        String[] inputData = {"1", "chocolate", "bar", "at", "0.85"};
+        assertEquals(true, ReceiptMaker.parseExempt(inputData));
+    }
 }
