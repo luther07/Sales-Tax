@@ -23,7 +23,7 @@ public class ProductExempt extends Product {
         if (this.quantity < 1) throw new java.lang.IllegalArgumentException();
     }
 
-    private int parseQuantity(String[] inputLine) {
+    int parseQuantity(String[] inputLine) {
         int parseInteger = 0;
         try { 
             parseInteger = Integer.parseInt(inputLine[0]);
