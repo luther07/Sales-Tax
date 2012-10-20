@@ -5,6 +5,9 @@ Assumption: I can use java.lang.Math, because it is not considered external.
 
 Assumption: The taxes will not be variable.
 
+Assumption: Each well-formed input row should have quantity, followed by description,
+followed by "at", followed by pre-tax price. I assume each pare is required. 
+
 To test application: 
 From the project base directory type: 'java -jar target/scala-2.9.1/sales-tax_2.9.1-1.0.jar'
 Type three full lines of input like:
