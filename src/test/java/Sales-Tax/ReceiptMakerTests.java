@@ -22,4 +22,10 @@ public class ReceiptMakerTests {
         String[] inputData = {"500", "books", "at", "12.49"};
         assertEquals(500, ReceiptMaker.parseQuantity(inputData));
     }
+
+    @Test
+    public void ReceiptMaker_parseInteger_WhenInputHasQuantityZero_ReturnsZero() {
+        String[] inputData = {"0", "books", "at", "12.49"};
+        assertEquals(0, ReceiptMaker.parseQuantity(inputData));
+    }
 }
