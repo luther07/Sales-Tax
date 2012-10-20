@@ -64,8 +64,15 @@ public class ProductExemptTests {
     }
 
     @Test
-	public void ProductExempt_WhenTaxNotAtFiveCentIncr_ThenRound() {
+    public void ProductExempt_WhenTaxNotAtFiveCentIncr_ThenRound() {
         ProductExempt taxRoundingProduct = new ProductExempt(999, true, "must round", 1.1);
         assertEquals(0.10, taxRoundingProduct.tax(), 0.01);
+    }
+
+    @Test
+    public void ProductExempt_WhenInputProductQuantityIs500_ThenObjectHas500Quantity() {
+        String[] inputProductData = {"500", "books", "at", "12.49"};
+        ProductExempt inputQuantityFiveHundred = new ProductExempt(inputProductData);
+        assertEquals(500, inputQuantityFiveHundred.quantity());
     }
 }
