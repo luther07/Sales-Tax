@@ -17,6 +17,16 @@ public class ReceiptMaker {
     private static String name = "";
     private static double price = 0.0;
 
+    static int parseQuantity(String[] inputLine) {
+       int parseInteger = 0;
+       try { 
+            parseInteger = Integer.parseInt(inputLine[0]);
+	} catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+	}
+        return parseInteger;
+    }
+
     /*************************************************************
      *
      * @returns the receipt total for all products in a receipt.

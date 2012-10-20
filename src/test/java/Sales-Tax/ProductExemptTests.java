@@ -68,29 +68,4 @@ public class ProductExemptTests {
         ProductExempt taxRoundingProduct = new ProductExempt(999, true, "must round", 1.1);
         assertEquals(0.10, taxRoundingProduct.tax(), 0.01);
     }
-
-    @Test
-    public void ProductExempt_WhenInputProductQuantityIs500_ThenObjectHas500Quantity() {
-        String[] inputProductData = {"500", "books", "at", "12.49"};
-        ProductExempt inputQuantityFiveHundred = new ProductExempt(inputProductData);
-        assertEquals(500, inputQuantityFiveHundred.quantity());
-    }
-
-    @Test(expected = java.lang.IllegalArgumentException.class)
-    public void ProductExempt_ConstructorStringArray_WhenQuantityLessThan1_ExceptionThrown() {
-        String[] quantityZero = {"0", "books", "at", "12.49"};
-        ProductExempt stringArrayConstructorZeroQuantity = new ProductExempt(quantityZero);
-    }
-
-    @Test
-    public void ProductExempt_parseQuantity_WhenParsingQuanity500_Returns500() {
-        String[] inputProductData = {"500", "books", "at", "12.49"};
-        assertEquals(500, ProductExempt.parseQuantity(inputProductData));
-    }
-
-    @Test(expected = java.lang.IllegalArgumentException.class)
-    public void ProductExempt_ConstructorStringArray_WhenEmptyName_ExceptionThrown() {
-        String[] inputProductData = {"1", "at", "12.49"};
-        ProductExempt stringArrayConstructorEmptyName = new ProductExempt(inputProductData);
-    }
 }
