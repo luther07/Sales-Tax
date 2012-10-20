@@ -81,4 +81,16 @@ public class ProductExemptTests {
         String[] quantityZero = {"0", "books", "at", "12.49"};
         ProductExempt stringArrayConstructorZeroQuantity = new ProductExempt(quantityZero);
     }
+
+    @Test
+    public void ProductExempt_parseQuantity_WhenParsingQuanity500_Returns500() {
+        String[] inputProductData = {"500", "books", "at", "12.49"};
+        assertEquals(500, ProductExempt.parseQuantity(inputProductData));
+    }
+
+    @Test(expected = java.lang.IllegalArgumentException.class)
+    public void ProductExempt_ConstructorStringArray_WhenEmptyName_ExceptionThrown() {
+        String[] inputProductData = {"1", "at", "12.49"};
+        ProductExempt stringArrayConstructorEmptyName = new ProductExempt(inputProductData);
+    }
 }
