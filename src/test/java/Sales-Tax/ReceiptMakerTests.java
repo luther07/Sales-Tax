@@ -16,4 +16,10 @@ public class ReceiptMakerTests {
         ReceiptMaker zeroItems = new ReceiptMaker();
         assertEquals(0.0, zeroItems.receiptTotal(), 0.01);
     }
+
+    @Test
+    public void ReceiptMaker_parseInteger_WhenInputHasQuantity500_Returns500() {
+        String[] inputData = {"500", "books", "at", "12.49"};
+        assertEquals(500, ReceiptMaker.parseQuantity(inputData));
+    }
 }
