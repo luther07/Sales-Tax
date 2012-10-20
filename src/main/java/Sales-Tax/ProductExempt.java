@@ -19,15 +19,18 @@ public class ProductExempt extends Product {
     private int quantity;
 
     public ProductExempt(String[] inputData) {
-        int quantityInteger = 0;
+        this.quantity = parseQuantity(inputData);
+        if (this.quantity < 1) throw new java.lang.IllegalArgumentException();
+    }
+
+    private int parseQuantity(String[] inputLine) {
+        int parseInteger = 0;
         try { 
-            quantityInteger = Integer.parseInt(inputData[0]);
+            parseInteger = Integer.parseInt(inputLine[0]);
 	} catch (NumberFormatException e) {
             System.out.println(e.getMessage());
 	}
-        if (quantityInteger < 1) throw new java.lang.IllegalArgumentException();
-
-        this.quantity = quantityInteger;
+        return parseInteger;
     }
 
     public ProductExempt(int quantity, boolean imported, String name, double unitPrice) {
