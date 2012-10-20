@@ -59,7 +59,16 @@ public class ReceiptMaker {
         System.exit(1);
     }
 
-    for(int j = 1; j <= 3; j++) {
+    System.out.println("How many items on this order?");
+    String numberOfItems = c.readLine();
+    Integer parsedNumber = 0;
+    try {
+        parsedNumber = Integer.parseInt(numberOfItems);
+    } catch (NumberFormatException e) {
+        System.out.println(e.getMessage());
+    }
+
+    for(int j = 1; j <= parsedNumber; j++) {
     productFlush();
     line = c.readLine();
     tokenArray = line.split(" ");
