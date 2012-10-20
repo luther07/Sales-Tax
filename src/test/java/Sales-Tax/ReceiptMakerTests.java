@@ -44,6 +44,6 @@ public class ReceiptMakerTests {
     @Test
     public void ReceiptMaker_parsePrice_WhenInputIs100_Returns100() {
         String[] inputData = {"1", "imported", "book", "at", "100.0"};
-        assertEquals(100.0, ReceiptMaker.parsePrice(inputData));
+        assertEquals(100.0, ReceiptMaker.parsePrice(inputData), 0.01);
     }
 }

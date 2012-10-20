@@ -17,6 +17,17 @@ public class ReceiptMaker {
     private static String name = "";
     private static double price = 0.0;
 
+    static double parsePrice(String[] inputLine) {
+        double inputPrice = 0.0;
+        int inputSize = inputLine.length;
+        try {
+            inputPrice = Double.parseDouble(inputLine[inputSize-1]);
+	} catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+	}
+        return inputPrice;
+    }
+
     static boolean parseImported(String[] inputLine) {
         boolean isImported = false;
         for (String item : inputLine) {
