@@ -17,6 +17,15 @@ public class ReceiptMaker {
     private static String name = "";
     private static double price = 0.0;
 
+    static boolean parseImported(String[] inputLine) {
+        boolean isImported = false;
+        for (String item : inputLine) {
+            if (item.equalsIgnoreCase("imported"))
+                isImported = true;
+	}
+	return isImported;
+    }
+
     static String parseName(String[] inputLine) {
         String inputName = "";
         String[] input = inputLine;
