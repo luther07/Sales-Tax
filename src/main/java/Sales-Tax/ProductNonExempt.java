@@ -11,9 +11,9 @@
 
 package salestax;
 
-public class ProductNonExempt extends Product{
-    private static final double basicSalesTax = 10.0;
-    private static final double importDuty = 5.0;
+public class ProductNonExempt extends Product {
+    private static final double BASIC_SALES_TAX  = 10.0;
+    private static final double IMPORT_DUTY = 5.0;
     private final boolean imported;
     private final String name;
     private final double unitPrice;
@@ -47,9 +47,9 @@ public class ProductNonExempt extends Product{
 
     public double tax() {
         if (imported) {
-            return taxhelper(this.unitPrice * (importDuty + basicSalesTax) / 100);
+            return taxhelper(this.unitPrice * (IMPORT_DUTY + BASIC_SALES_TAX) / 100);
         } else {
-            return taxhelper(this.unitPrice * (basicSalesTax / 100));
+            return taxhelper(this.unitPrice * (BASIC_SALES_TAX / 100));
         }
     }
 
