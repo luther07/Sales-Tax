@@ -47,7 +47,7 @@ public class ProductExempt extends Product {
 
     public double tax() {
         if (imported) {
-            return taxhelper(this.unitPrice * (IMPORTDUTY + BASIC_SALES_TAX) / 100);
+            return taxhelper(this.unitPrice * (IMPORT_DUTY + BASIC_SALES_TAX) / 100);
         } else {
             return 0;
         }
