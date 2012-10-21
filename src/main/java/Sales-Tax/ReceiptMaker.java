@@ -9,10 +9,15 @@ public class ReceiptMaker {
     private static LinkedList<Product> products = new LinkedList<Product>();
 
     public void addProduct(String[] productInput) {
-        if (parseExempt(productInput)) {
-	    products.add(new ProductExempt(parseQuantity(productInput), parseImported(productInput), parseName(productInput), parsePrice(productInput)));          
+        boolean isExempt = parseExempt(productInput);
+        int quantity = parseQuantity(productInput);
+        boolean imported = parseImported(productInput);
+        String name = parseName(productInput);
+        double price = parsePrice(productInput);
+        if (isExempt) {
+	    products.add(new ProductExempt(quantity, imported, name, price));          
 	} else {
-       	    products.add(new ProductNonExempt(parseQuantity(productInput), parseImported(productInput), parseName(productInput), parsePrice(productInput)));
+       	    products.add(new ProductNonExempt(quantity, imported, name, price));
 	}
     }
 
