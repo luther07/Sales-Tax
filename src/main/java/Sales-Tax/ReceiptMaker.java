@@ -29,6 +29,22 @@ public class ReceiptMaker {
         System.out.println("Total: " + this.receiptTotal());
     }
 
+    public double receiptTotal() {
+        double runningTotal = 0.0;
+        for (Product item : products) {
+            runningTotal += item.quantity() * item.price();
+        }
+        return runningTotal;
+    }
+
+    public double totalSalesTax() {
+        double runningTotal = 0.0;
+        for (Product item : products) {
+            runningTotal += item.quantity() * item.tax();
+        }
+        return runningTotal;
+    }
+
     public void addProduct(String[] productInput) {
         boolean isExempt = parseExempt(productInput);
         int quantity = parseQuantity(productInput);
@@ -89,22 +105,6 @@ public class ReceiptMaker {
             System.out.println(e.getMessage());
         }
         return parseInteger;
-    }
-
-    public double receiptTotal() {
-        double runningTotal = 0.0;
-        for (Product item : products) {
-            runningTotal += item.quantity() * item.price();
-        }
-        return runningTotal;
-    }
-
-    public double totalSalesTax() {
-        double runningTotal = 0.0;
-        for (Product item : products) {
-            runningTotal += item.quantity() * item.tax();
-        }
-        return runningTotal;
     }
 
     public static void main(String[] args) throws IOException {
