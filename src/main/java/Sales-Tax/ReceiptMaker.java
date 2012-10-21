@@ -7,6 +7,17 @@ import java.util.LinkedList;
 public class ReceiptMaker {
     private LinkedList<Product> products = new LinkedList<Product>();
 
+    public void print() {
+        System.out.println("OUTPUT:");
+
+        for (Product item : products) {
+            System.out.println(item.toString());
+        }
+
+        System.out.println("Sales Taxes: " + this.totalSalesTax());
+        System.out.println("Total: " + this.receiptTotal());
+    }
+
     public void addProduct(String[] productInput) {
         boolean isExempt = parseExempt(productInput);
         int quantity = parseQuantity(productInput);
@@ -113,12 +124,6 @@ public class ReceiptMaker {
             receipt.addProduct(tokenArray);
 	}
 
-        System.out.println("OUTPUT:");
-        for (Product item : products) {
-            System.out.println(item.toString());
-        }
-
-        System.out.println("Sales Taxes: " + receipt.totalSalesTax());
-        System.out.println("Total: " + receipt.receiptTotal());
+        receipt.print();
     }
 }
