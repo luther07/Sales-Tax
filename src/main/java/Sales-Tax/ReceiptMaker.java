@@ -1,7 +1,6 @@
 package salestax;
 
 import java.io.Console;
-import java.util.Arrays;
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -14,6 +13,7 @@ public class ReceiptMaker {
         boolean imported = parseImported(productInput);
         String name = parseName(productInput);
         double price = parsePrice(productInput);
+
         if (isExempt) {
 	    products.add(new ProductExempt(quantity, imported, name, price));          
 	} else {
