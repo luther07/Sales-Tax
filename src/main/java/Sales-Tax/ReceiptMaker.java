@@ -129,25 +129,12 @@ public class ReceiptMaker {
      */
     for (int i = 0; i < tokenArray.length; i++) {
 
-	/************************************************
-        * Parse price, if at last index.
-        * Add Product to products list, if at last index.
-        ************************************************/
-        else if (i == tokenArray.length-1) {
-            try {
-                price = Double.parseDouble(tokenArray[i]);
-            } catch (java.lang.NumberFormatException e) {
-                System.err.println("NumberFormatException: String does not contain parsable double");
-                System.exit(1);
-            }
-        }
-
 	/*************************************************
         * Set variables exempt and imported to true, if token matches specified string.
         * Concatenate string to name variable.
         * Must include conditions for books, food, and medical products.
         *************************************************/
-        else {
+         {
             if (tokenArray[i].equalsIgnoreCase("imported")) {
                 imported = true;
                 name = name + " " + tokenArray[i];
