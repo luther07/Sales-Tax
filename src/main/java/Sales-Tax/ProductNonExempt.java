@@ -13,10 +13,10 @@ package salestax;
 public class ProductNonExempt extends Product{
     private static final double basicSalesTax = 10.0;
     private static final double importDuty = 5.0;
-    private boolean imported;
-    private String name;
-    private double unitPrice;
-    private int quantity;
+    private final boolean imported;
+    private final String name;
+    private final double unitPrice;
+    private final int quantity;
     
     public ProductNonExempt(int quantity, boolean imported, String name, double unitPrice) {
         if (quantity < 1) throw new java.lang.IllegalArgumentException();
