@@ -17,6 +17,14 @@ public class ReceiptMaker {
     private static String name = "";
     private static double price = 0.0;
 
+    public void addProduct(String[] productInput) {
+        if (parseExempt(productInput)) {
+	    products.add(new ProductExempt(parseQuantity(productInput), parseImported(productInput), parseName(productInput), parsePrice(productInput)));          
+	} else {
+       	    products.add(new ProductNonExempt(parseQuantity(productInput), parseImported(productInput), parseName(productInput), parsePrice(productInput)));
+	}
+    }
+
     static boolean parseExempt(String[] inputLine) {
         boolean isExempt = false;
         for (String item : inputLine) {
@@ -121,16 +129,14 @@ public class ReceiptMaker {
         System.exit(1);
     }
 
+    ReceiptMaker receipt = new ReceiptMaker();
+
     for(int j = 1; j <= parsedNumber; j++) {
         productFlush();
         line = c.readLine();
         tokenArray = line.split(" ");
 
-        if (parseExempt(tokenArray)) {
-	    products.add(new ProductExempt(parseQuantity(tokenArray), parseImported(tokenArray), parseName(tokenArray), parsePrice(tokenArray)));
-	} else {
-	    products.add(new ProductNonExempt(parseQuantity(tokenArray), parseImported(tokenArray), parseName(tokenArray), parsePrice(tokenArray)));
-	}
+        receipt.addProduct(tokenArray);
 
     /*
      * Loop through tokenArray, in order to create Product.
