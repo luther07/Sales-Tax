@@ -128,29 +128,6 @@ public class ReceiptMaker {
      * Loop through tokenArray, in order to create Product.
      */
     for (int i = 0; i < tokenArray.length; i++) {
-
-	/*************************************************
-        * Set variables exempt and imported to true, if token matches specified string.
-        * Concatenate string to name variable.
-        * Must include conditions for books, food, and medical products.
-        *************************************************/
-         {
-            if (tokenArray[i].equalsIgnoreCase("imported")) {
-                imported = true;
-                name = name + " " + tokenArray[i];
-            } else if ((tokenArray[i].equalsIgnoreCase("pills") ||
-                        tokenArray[i].equalsIgnoreCase("book") ||
-                        tokenArray[i].equalsIgnoreCase("chocolate") ||
-                        tokenArray[i].equalsIgnoreCase("chocolates"))) {
-                exempt = true;
-                name = name + " " + tokenArray[i];
-            } else if (tokenArray[i].equalsIgnoreCase("at")) {
-                name = name + "";
-            } else {
-                name = name + " " + tokenArray[i];
-            }
-        }
-
     } // end loop on tokenArray
 
 	}
