@@ -88,8 +88,6 @@ public class ReceiptMaker {
     }
 
     public static void main(String[] args) throws IOException{
-        double totalTax = 0.0;
-        double totalAmount = 0.0;
 
         Console c = System.console();
         if (c == null) {
@@ -118,11 +116,9 @@ public class ReceiptMaker {
         System.out.println("OUTPUT:");
         for (Product item : products) {
             System.out.println(item.toString());
-            totalTax += item.tax() * item.quantity();
-            totalAmount += item.quantity() * item.price();
         }
 
-        System.out.println("Sales Taxes: " + totalTax);
-        System.out.println("Total: " + totalAmount);
+        System.out.println("Sales Taxes: " + receipt.totalSalesTax());
+        System.out.println("Total: " + receipt.receiptTotal());
     }
 }
