@@ -34,9 +34,8 @@ public class ReceiptMaker {
 
     static double parsePrice(String[] inputLine) {
         double inputPrice = 0.0;
-        int inputSize = inputLine.length;
         try {
-            inputPrice = Double.parseDouble(inputLine[inputSize-1]);
+            inputPrice = Double.parseDouble(inputLine[inputLine.length-1]);
 	} catch (NumberFormatException e) {
             System.out.println(e.getMessage());
             System.exit(1);
@@ -55,8 +54,7 @@ public class ReceiptMaker {
 
     static String parseName(String[] inputLine) {
         String inputName = "";
-        String[] input = inputLine;
-        for(int i = 1; i <= input.length - 3; i++) {
+        for(int i = 1; i <= inputLine.length - 3; i++) {
             inputName += inputLine[i];
         }
         return inputName;
