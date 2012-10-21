@@ -122,9 +122,15 @@ public class ReceiptMaker {
     }
 
     for(int j = 1; j <= parsedNumber; j++) {
-    productFlush();
-    line = c.readLine();
-    tokenArray = line.split(" ");
+        productFlush();
+        line = c.readLine();
+        tokenArray = line.split(" ");
+
+        if (parseExempt(tokenArray)) {
+	    products.add(new ProductExempt(parseQuantity(tokenArray), parseImported(tokenArray), parseName(tokenArray), parsePrice(tokenArray)));
+	} else {
+	    products.add(new ProductNonExempt(parseQuantity(tokenArray), parseImported(tokenArray), parseName(tokenArray), parsePrice(tokenArray)));
+	}
 
     /*
      * Loop through tokenArray, in order to create Product.
@@ -155,10 +161,6 @@ public class ReceiptMaker {
                 System.err.println("NumberFormatException: String does not contain parsable double");
                 System.exit(1);
             }
-            if (exempt)
-                products.add(new ProductExempt(quantity, imported, name, price));
-            else
-                products.add(new ProductNonExempt(quantity, imported, name, price));
         }
 
 	/*************************************************
