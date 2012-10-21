@@ -71,11 +71,6 @@ public class ReceiptMaker {
         return parseInteger;
     }
 
-    /*************************************************************
-     *
-     * @returns the receipt total for all products in a receipt.
-     *
-     ************************************************************/
     public double receiptTotal() {
         double runningTotal = 0;
         for (Product item : products) {
@@ -84,11 +79,6 @@ public class ReceiptMaker {
         return runningTotal;
     }
 
-    /*************************************************************
-     *
-     * @returns the total sales tax for all products in a receipt.
-     *
-     ************************************************************/
     public double totalSalesTax() {
         double runningTotal = 0;
         for (Product item : products) {
