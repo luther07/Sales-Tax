@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class ReceiptMaker {
-    private static LinkedList<Product> products = new LinkedList<Product>();
+    private LinkedList<Product> products = new LinkedList<Product>();
 
     public void addProduct(String[] productInput) {
         boolean isExempt = parseExempt(productInput);
