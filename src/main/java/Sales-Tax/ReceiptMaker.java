@@ -77,7 +77,7 @@ public class ReceiptMaker {
     public double receiptTotal() {
         double runningTotal = 0;
         for (Product item : products) {
-            runningTotal += item.price();
+            runningTotal += item.quantity() * item.price();
 	}
         return runningTotal;
     }
@@ -90,7 +90,7 @@ public class ReceiptMaker {
     public double totalSalesTax() {
         double runningTotal = 0;
         for (Product item : products) {
-            runningTotal += item.tax();
+            runningTotal += item.quantity() * item.tax();
 	}
         return runningTotal;
     }
