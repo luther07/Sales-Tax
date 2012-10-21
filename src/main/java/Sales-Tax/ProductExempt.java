@@ -1,6 +1,7 @@
 /*******************************************************
- * Author: Mark Johnson
- * Date: 10/07/12
+ * Author:      Mark Johnson
+ * Date:        10/07/12
+ * Modified:    10/21/12
  *
  * Compilation: javac ProductNonExempt.java
  * Execution: not applicable

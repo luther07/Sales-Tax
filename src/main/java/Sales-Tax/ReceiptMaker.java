@@ -1,3 +1,14 @@
+/***********************************************************
+ * Author:      Mark Johnson
+ * Date:        10/07/12
+ * Modified:    10/21/12 
+ *
+ * Compilation: javac ReceiptMaker.java
+ * Execution:   not applicable
+ *
+ * Defines a type for generating receipts.
+ **********************************************************/
+
 package salestax;
 
 import java.io.Console;
