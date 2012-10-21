@@ -17,6 +17,13 @@ public class ReceiptMakerTests {
         assertEquals(0.0, zeroItems.receiptTotal(), 0.01);
     }
 
+    @Test void ReceiptMaker_ReceiptTotal_WhenQuantityMoreThanOne_AmmountIsMultiplied() {
+        ReceiptMaker quantityOfTen = new ReceiptMaker();
+        String[] inputData = {"10", "books", "at", "12.49"};
+        quantityOfTen.addProduct(inputData);
+        assertEquals(124.90, quantityOfTen.receiptTotal(), 0.01);
+    }
+
     @Test
     public void ReceiptMaker_parseInteger_WhenInputHasQuantity500_Returns500() {
         String[] inputData = {"500", "books", "at", "12.49"};
