@@ -55,7 +55,7 @@ public class ReceiptMaker {
     static String parseName(String[] inputLine) {
         String inputName = "";
         for(int i = 1; i <= inputLine.length - 3; i++) {
-            inputName += inputLine[i];
+            inputName += inputLine[i] + " ";
         }
         return inputName;
     }
