@@ -121,15 +121,7 @@ public class ReceiptMaker {
         for(int j = 1; j <= parsedNumber; j++) {
             line = c.readLine();
             tokenArray = line.split(" ");
-
             receipt.addProduct(tokenArray);
-
-    /*
-     * Loop through tokenArray, in order to create Product.
-     */
-    for (int i = 0; i < tokenArray.length; i++) {
-    } // end loop on tokenArray
-
 	}
 
         System.out.println("OUTPUT:");
