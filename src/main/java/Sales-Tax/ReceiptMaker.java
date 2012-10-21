@@ -37,20 +37,20 @@ public class ReceiptMaker {
         double price = parsePrice(productInput);
 
         if (isExempt) {
-	    products.add(new ProductExempt(quantity, imported, name, price));          
-	} else {
-       	    products.add(new ProductNonExempt(quantity, imported, name, price));
-	}
+            products.add(new ProductExempt(quantity, imported, name, price));
+        } else {
+            products.add(new ProductNonExempt(quantity, imported, name, price));
+        }
     }
 
     static boolean parseExempt(String[] inputLine) {
         boolean isExempt = false;
         for (String item : inputLine) {
-            if (item.equalsIgnoreCase("pills") || item.equalsIgnoreCase("book") ||
-                item.equalsIgnoreCase("books") || item.equalsIgnoreCase("chocolate") ||
-                item.equalsIgnoreCase("chocolates"))
+            if (item.equalsIgnoreCase("pills") || item.equalsIgnoreCase("book") 
+                || item.equalsIgnoreCase("books") || item.equalsIgnoreCase("chocolate")
+                || item.equalsIgnoreCase("chocolates"))
                 { isExempt = true; } 
-	}
+        }
         return isExempt;
     }
 
@@ -58,10 +58,10 @@ public class ReceiptMaker {
         double inputPrice = 0.0;
         try {
             inputPrice = Double.parseDouble(inputLine[inputLine.length-1]);
-	} catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
             System.exit(1);
-	}
+        }
         return inputPrice;
     }
 
@@ -70,26 +70,26 @@ public class ReceiptMaker {
         for (String item : inputLine) {
             if (item.equalsIgnoreCase("imported"))
                 isImported = true;
-	}
-	return isImported;
+        }
+        return isImported;
     }
 
     static String parseName(String[] inputLine) {
         String inputName = "";
-        for(int i = 1; i <= inputLine.length - 3; i++) {
+        for (int i = 1; i <= inputLine.length - 3; i++) {
             inputName += inputLine[i] + " ";
         }
         return inputName;
     }
 
     static int parseQuantity(String[] inputLine) {
-       int parseInteger = 0;
-       try { 
+        int parseInteger = 0;
+        try { 
             parseInteger = Integer.parseInt(inputLine[0]);
-	} catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
             System.exit(1);
-	}
+        }
         return parseInteger;
     }
 
@@ -97,7 +97,7 @@ public class ReceiptMaker {
         double runningTotal = 0.0;
         for (Product item : products) {
             runningTotal += item.quantity() * item.price();
-	}
+        }
         return runningTotal;
     }
 
@@ -105,11 +105,11 @@ public class ReceiptMaker {
         double runningTotal = 0.0;
         for (Product item : products) {
             runningTotal += item.quantity() * item.tax();
-	}
+        }
         return runningTotal;
     }
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
 
         Console c = System.console();
         if (c == null) {
@@ -119,7 +119,7 @@ public class ReceiptMaker {
 
         System.out.println("How many items on this order?");
         String numberOfItems = c.readLine();
-        Integer parsedNumber = 0;
+        int parsedNumber = 0;
         try {
             parsedNumber = Integer.parseInt(numberOfItems);
         } catch (NumberFormatException e) {
@@ -129,11 +129,11 @@ public class ReceiptMaker {
 
         ReceiptMaker receipt = new ReceiptMaker();
 
-        for(int j = 1; j <= parsedNumber; j++) {
+        for (int j = 1; j <= parsedNumber; j++) {
             String line = c.readLine();
             String[] tokenArray = line.split(" ");
             receipt.addProduct(tokenArray);
-	}
+        }
 
         receipt.print();
     }
