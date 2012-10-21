@@ -60,7 +60,6 @@ public class ReceiptMaker {
             inputPrice = Double.parseDouble(inputLine[inputLine.length-1]);
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
-            System.exit(1);
         }
         return inputPrice;
     }
@@ -88,7 +87,6 @@ public class ReceiptMaker {
             parseInteger = Integer.parseInt(inputLine[0]);
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
-            System.exit(1);
         }
         return parseInteger;
     }
