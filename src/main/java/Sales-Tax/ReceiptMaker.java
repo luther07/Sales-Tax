@@ -99,14 +99,6 @@ public class ReceiptMaker {
         return runningTotal;
     }
 
-    public static void productFlush() {
-        quantity = 0;
-        imported = false;
-        exempt = false;
-        name = "";
-        price = 0.0;
-    }
-
     public static void main(String[] args) throws IOException{
         String line;
         String[] tokenArray;
@@ -132,7 +124,6 @@ public class ReceiptMaker {
         ReceiptMaker receipt = new ReceiptMaker();
 
         for(int j = 1; j <= parsedNumber; j++) {
-            productFlush();
             line = c.readLine();
             tokenArray = line.split(" ");
 
