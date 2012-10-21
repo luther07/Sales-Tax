@@ -11,13 +11,22 @@ public class ReceiptMakerTests {
         assertEquals(0.0, zeroItems.totalSalesTax(), 0.01);
     }
 
+    @Test 
+    public void ReceiptMaker_ReceiptTaxTotal_WhenQuantityMoreThanOne_AmountIsMultiplied() {
+        ReceiptMaker quantityOfTen = new ReceiptMaker();
+        String[] inputData = {"10", "music", "CD", "at", "12.49"};
+        quantityOfTen.addProduct(inputData);
+        assertEquals(12.49, quantityOfTen.totalSalesTax(), 0.01);
+    }
+
     @Test
     public void ReceiptMaker_ReceiptTotal_WhenZeroProducts_EqualsZero() {
         ReceiptMaker zeroItems = new ReceiptMaker();
         assertEquals(0.0, zeroItems.receiptTotal(), 0.01);
     }
 
-    @Test void ReceiptMaker_ReceiptTotal_WhenQuantityMoreThanOne_AmmountIsMultiplied() {
+    @Test 
+    public void ReceiptMaker_ReceiptTotal_WhenQuantityMoreThanOne_AmmountIsMultiplied() {
         ReceiptMaker quantityOfTen = new ReceiptMaker();
         String[] inputData = {"10", "books", "at", "12.49"};
         quantityOfTen.addProduct(inputData);
