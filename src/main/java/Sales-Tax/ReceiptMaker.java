@@ -129,19 +129,6 @@ public class ReceiptMaker {
      */
     for (int i = 0; i < tokenArray.length; i++) {
 
-        /************************************************
-        * Parse quantity, if at first index.
-        ************************************************/
-        if (i == 0) {
-            try {
-                quantity = Integer.parseInt(tokenArray[0]);
-            } catch (java.lang.NumberFormatException e) {
-                System.err.println("NumberFormatException: string does not contain parsable integer");
-                System.exit(1);
-            }
-        }
-
-
 	/************************************************
         * Parse price, if at last index.
         * Add Product to products list, if at last index.
