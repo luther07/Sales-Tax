@@ -72,7 +72,7 @@ public class ReceiptMaker {
     }
 
     public double receiptTotal() {
-        double runningTotal = 0;
+        double runningTotal = 0.0;
         for (Product item : products) {
             runningTotal += item.quantity() * item.price();
 	}
@@ -80,7 +80,7 @@ public class ReceiptMaker {
     }
 
     public double totalSalesTax() {
-        double runningTotal = 0;
+        double runningTotal = 0.0;
         for (Product item : products) {
             runningTotal += item.quantity() * item.tax();
 	}
@@ -118,7 +118,7 @@ public class ReceiptMaker {
         System.out.println("OUTPUT:");
         for (Product item : products) {
             System.out.println(item.toString());
-            totalTax += item.tax();
+            totalTax += item.tax() * item.quantity();
             totalAmount += item.quantity() * item.price();
         }
 
