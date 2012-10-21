@@ -8,8 +8,6 @@ import java.util.LinkedList;
 public class ReceiptMaker {
     private static int quantity = 0;
     private static LinkedList<Product> products = new LinkedList<Product>();
-    private static double totalTax = 0.0;
-    private static double totalAmount = 0.0;
     private static boolean imported = false;
     private static boolean exempt = false;
     private static String name = "";
@@ -112,31 +110,33 @@ public class ReceiptMaker {
     public static void main(String[] args) throws IOException{
         String line;
         String[] tokenArray;
+        double totalTax = 0.0;
+        double totalAmount = 0.0;
 
-    Console c = System.console();
-    if (c == null) {
-        System.err.println("No console.");
-        System.exit(1);
-    }
+        Console c = System.console();
+        if (c == null) {
+            System.err.println("No console.");
+            System.exit(1);
+        }
 
-    System.out.println("How many items on this order?");
-    String numberOfItems = c.readLine();
-    Integer parsedNumber = 0;
-    try {
-        parsedNumber = Integer.parseInt(numberOfItems);
-    } catch (NumberFormatException e) {
-        System.out.println(e.getMessage());
-        System.exit(1);
-    }
+        System.out.println("How many items on this order?");
+        String numberOfItems = c.readLine();
+        Integer parsedNumber = 0;
+        try {
+            parsedNumber = Integer.parseInt(numberOfItems);
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
 
-    ReceiptMaker receipt = new ReceiptMaker();
+        ReceiptMaker receipt = new ReceiptMaker();
 
-    for(int j = 1; j <= parsedNumber; j++) {
-        productFlush();
-        line = c.readLine();
-        tokenArray = line.split(" ");
+        for(int j = 1; j <= parsedNumber; j++) {
+            productFlush();
+            line = c.readLine();
+            tokenArray = line.split(" ");
 
-        receipt.addProduct(tokenArray);
+            receipt.addProduct(tokenArray);
 
     /*
      * Loop through tokenArray, in order to create Product.
@@ -195,12 +195,12 @@ public class ReceiptMaker {
 
 	}
 
-    System.out.println("OUTPUT:");
-        for (Product item : products) {
-            System.out.println(item.toString());
-            totalTax += item.tax();
-            totalAmount += item.quantity() * item.price();
-        }
+        System.out.println("OUTPUT:");
+            for (Product item : products) {
+                System.out.println(item.toString());
+                totalTax += item.tax();
+                totalAmount += item.quantity() * item.price();
+            }
 
         System.out.println("Sales Taxes: " + totalTax);
         System.out.println("Total: " + totalAmount);
