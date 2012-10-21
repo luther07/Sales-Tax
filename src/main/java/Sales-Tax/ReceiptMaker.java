@@ -6,12 +6,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class ReceiptMaker {
-    private static int quantity = 0;
     private static LinkedList<Product> products = new LinkedList<Product>();
-    private static boolean imported = false;
-    private static boolean exempt = false;
-    private static String name = "";
-    private static double price = 0.0;
 
     public void addProduct(String[] productInput) {
         if (parseExempt(productInput)) {
